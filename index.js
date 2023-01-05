@@ -23,7 +23,7 @@ app.use((error, req, res, next) => {
   res.status(status).json({ message: message, data: data });
 });
 mongoose
-  .connect("mongodb://mongo:27017")
+  .connect("mongodb://localhost:27017/Users")
   .then((result) => {
     app.listen(8080);
   })
