@@ -6,7 +6,8 @@ const authController = require("../controllers/auth");
 
 const router = express.Router();
 
-router.put(
+//localhost:8080/auth/signup
+http: router.put(
   "/signup",
   [
     body("email")
@@ -26,7 +27,10 @@ router.put(
   authController.signup
 );
 
-router.post("/login", authController.login);
-router.get("/me", isAuth, authController.getUser);
+//localhost:8080/auth/login
+http: router.post("/login", authController.login);
+
+//localhost:8080/auth/me
+http: router.get("/me", isAuth, authController.getUser);
 
 module.exports = router;
